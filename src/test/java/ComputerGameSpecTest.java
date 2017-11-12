@@ -8,7 +8,7 @@ public class ComputerGameSpecTest {
     public void toStringTest() {
         ComputerGameSpec gameSpec = new ComputerGameSpec("CS: Go", "Cool",
                 Genre.ACTION, 18, Platform.WINDOWS);
-        assertEquals(gameSpec.toString(), "CS: Go");
+        assertEquals("CS: Go", gameSpec.toString());
     }
 
     @Test
@@ -24,34 +24,34 @@ public class ComputerGameSpecTest {
     public void getNameTest(){
         ComputerGameSpec gameSpec = new ComputerGameSpec("CS: Go", "Cool",
                 Genre.ACTION, 18, Platform.WINDOWS);
-        assertEquals(gameSpec.getName(), "CS: Go");
+        assertEquals("CS: Go", gameSpec.getName());
     }
 
     @Test
     public void getDescriptionTest(){
         ComputerGameSpec gameSpec = new ComputerGameSpec("CS: Go", "Cool",
                 Genre.ACTION, 18, Platform.WINDOWS);
-        assertEquals(gameSpec.getDescription(), "Cool");
+        assertEquals("Cool", gameSpec.getDescription());
     }
 
     @Test
     public void getGenreTest(){
         ComputerGameSpec gameSpec = new ComputerGameSpec("CS: Go", "Cool",
                 Genre.ACTION, 18, Platform.WINDOWS);
-        assertEquals(gameSpec.getGenre(), Genre.ACTION);
+        assertEquals(Genre.ACTION, gameSpec.getGenre());
     }
 
     @Test
     public void getAgeRestrictionTest(){
         ComputerGameSpec gameSpec = new ComputerGameSpec("CS: Go", "Cool",
                 Genre.ACTION, 18, Platform.WINDOWS);
-        assertEquals(gameSpec.getAgeRestriction(), 18);
+        assertEquals(18, gameSpec.getAgeRestriction());
     }
 
     @Test
     public void getPlatformTest(){
         ComputerGameSpec gameSpec = new ComputerGameSpec("CS: Go", "Cool",
                 Genre.ACTION, 18, Platform.WINDOWS);
-        assertEquals(gameSpec.getPlatform(), Platform.WINDOWS);
+        assertEquals(Platform.WINDOWS, gameSpec.getPlatform());
     }
 }

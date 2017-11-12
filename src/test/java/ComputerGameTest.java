@@ -9,7 +9,7 @@ public class ComputerGameTest {
         ComputerGame game = new ComputerGame(100,
                 new ComputerGameSpec("CS: Go", "Cool",
                 Genre.ACTION, 18, Platform.WINDOWS));
-        assertEquals(game.getId(), 0);
+        assertTrue(game.getId() == (int)game.getId());
     }
 
     @Test
@@ -17,7 +17,7 @@ public class ComputerGameTest {
         ComputerGame game = new ComputerGame(100,
                 new ComputerGameSpec("CS: Go", "Cool",
                         Genre.ACTION, 18, Platform.WINDOWS));
-        assertEquals(game.getPrice(), 100);
+        assertEquals(100, game.getPrice());
     }
 
     @Test
@@ -36,6 +36,6 @@ public class ComputerGameTest {
         ComputerGame game = new ComputerGame(100,
                 new ComputerGameSpec("CS: Go", "Cool",
                         Genre.ACTION, 18, Platform.WINDOWS));
-        assertEquals(game.toString(), "Game CS: Go - 100$");
+        assertEquals("Game CS: Go - 100$", game.toString());
     }
 }

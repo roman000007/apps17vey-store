@@ -18,10 +18,11 @@ public class ComputerStoreTest {
         inventory.add(new ComputerGame(215, new ComputerGameSpec("NFS 2018",
                 "Cool", Genre.ACTION, 18, Platform.LINUX)));
 
+        assertTrue(store.getInventory().size() == 3);
+
         ArrayList<ComputerGame> wanted = store.search(new ComputerGameSpec(
                 "NFS 2018", "Cool",
                 Genre.ACTION, 18, Platform.LINUX));
-        System.out.println(wanted);
         assertTrue(wanted.size() == 1 &&
                 wanted.get(0).toString().equals("Game NFS 2018 - 215$"));
     }
