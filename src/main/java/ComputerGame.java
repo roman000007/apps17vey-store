@@ -4,6 +4,11 @@ public class ComputerGame {
     private int price;
     private ComputerGameSpec specs;
 
+    public ComputerGame(int price, ComputerGameSpec specs) {
+        id = ComputerGame.generalId++;
+        this.specs = specs;
+        this.price = price;
+    }
 
     public int getId() {
         return id;
@@ -13,10 +18,8 @@ public class ComputerGame {
         return specs;
     }
 
-    public ComputerGame(int price, ComputerGameSpec specs) {
-        id = ComputerGame.generalId++;
-        this.specs = specs;
-        this.price = price;
+    public int getPrice() {
+        return price;
     }
 
     @Override

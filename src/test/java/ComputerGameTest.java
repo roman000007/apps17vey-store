@@ -10,7 +10,14 @@ public class ComputerGameTest {
                 new ComputerGameSpec("CS: Go", "Cool",
                 Genre.ACTION, 18, Platform.WINDOWS));
         assertEquals(game.getId(), 0);
+    }
 
+    @Test
+    public void getPriceTest() {
+        ComputerGame game = new ComputerGame(100,
+                new ComputerGameSpec("CS: Go", "Cool",
+                        Genre.ACTION, 18, Platform.WINDOWS));
+        assertEquals(game.getPrice(), 100);
     }
 
     @Test

@@ -1,12 +1,11 @@
 public class ComputerGameSpec {
-    public String name, description;
-    public int ageRestriction;
-    public Platform platform;
-    public Genre genre;
+    private String name, description;
+    private int ageRestriction;
+    private Platform platform;
+    private Genre genre;
 
-
-    public ComputerGameSpec(String name, String description, Genre genre, int ageRestriction,
-                            Platform platform) {
+    public ComputerGameSpec(String name, String description, Genre genre,
+                            int ageRestriction, Platform platform) {
         this.name = name;
         this.description = description;
         this.genre = genre;
@@ -15,20 +14,22 @@ public class ComputerGameSpec {
     }
 
     public boolean matches(ComputerGameSpec other) {
-        if(!name.equals(other.name)){
+        if (!name.equals(other.getName())) {
             return false;
         }
-        if (!description.toLowerCase().contains(other.description.toLowerCase())
-                && !other.description.toLowerCase().contains(description.toLowerCase())) {
+        if (!description.toLowerCase().contains(
+                other.getDescription().toLowerCase()) &&
+                !other.getDescription().toLowerCase().
+                        contains(description.toLowerCase())) {
             return false;
         }
-        if(ageRestriction != other.ageRestriction) {
+        if (ageRestriction != other.getAgeRestriction()) {
             return false;
         }
-        if(genre != other.genre) {
+        if (genre != other.getGenre()) {
             return false;
         }
-        if(platform != other.platform) {
+        if (platform != other.getPlatform()) {
             return false;
         }
 
@@ -39,4 +40,25 @@ public class ComputerGameSpec {
     public String toString() {
         return name;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public int getAgeRestriction() {
+        return ageRestriction;
+    }
+
+    public Platform getPlatform() {
+        return platform;
+    }
+
+    public Genre getGenre() {
+        return genre;
+    }
+
 }
