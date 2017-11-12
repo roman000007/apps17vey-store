@@ -11,10 +11,10 @@ public class ComputerStore {
         inventory = new ArrayList<>();
     }
 
-    public ArrayList<ComputerGame> search(ComputerGameSpec filter){
+    public ArrayList<ComputerGame> search(ComputerGameSpec filter) {
         ArrayList<ComputerGame> result = new ArrayList<>();
-        for (ComputerGame game: inventory){
-            if(game.getSpecs().matches(filter)){
+        for (ComputerGame game: inventory) {
+            if(game.getSpecs().matches(filter)) {
                 result.add(game);
             }
         }

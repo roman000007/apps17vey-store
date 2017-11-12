@@ -5,7 +5,7 @@ import static junit.framework.TestCase.assertTrue;
 
 public class ComputerGameTest {
     @Test
-    public void getId() {
+    public void getIdTest() {
         ComputerGame game = new ComputerGame(100,
                 new ComputerGameSpec("CS: Go", "Cool",
                 Genre.ACTION, 18, Platform.WINDOWS));
@@ -14,7 +14,7 @@ public class ComputerGameTest {
     }
 
     @Test
-    public void getSpecs() {
+    public void getSpecsTest() {
         ComputerGame game = new ComputerGame(100,
                 new ComputerGameSpec("CS: Go", "Cool",
                         Genre.ACTION, 18, Platform.WINDOWS));
@@ -22,5 +22,13 @@ public class ComputerGameTest {
                 new ComputerGameSpec("CS: Go", "Cool",
                         Genre.ACTION, 18, Platform.WINDOWS)
         ));
+    }
+
+    @Test
+    public void toStringTest() {
+        ComputerGame game = new ComputerGame(100,
+                new ComputerGameSpec("CS: Go", "Cool",
+                        Genre.ACTION, 18, Platform.WINDOWS));
+        assertEquals(game.toString(), "Game CS: Go - 100$");
     }
 }

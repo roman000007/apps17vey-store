@@ -13,7 +13,7 @@ public class ComputerGame {
         return specs;
     }
 
-    public ComputerGame(int price, ComputerGameSpec specs){
+    public ComputerGame(int price, ComputerGameSpec specs) {
         id = ComputerGame.generalId++;
         this.specs = specs;
         this.price = price;
@@ -21,6 +21,6 @@ public class ComputerGame {
 
     @Override
     public String toString() {
-        return "Game" + specs + " " + " - " + price + "$";
+        return "Game " + specs + " - " + price + "$";
     }
 }
