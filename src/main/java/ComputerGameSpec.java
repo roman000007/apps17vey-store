@@ -18,8 +18,8 @@ public class ComputerGameSpec {
             return false;
         }
         if (!description.toLowerCase().contains(
-                other.getDescription().toLowerCase()) &&
-                !other.getDescription().toLowerCase().
+                other.getDescription().toLowerCase())
+                && !other.getDescription().toLowerCase().
                         contains(description.toLowerCase())) {
             return false;
         }
