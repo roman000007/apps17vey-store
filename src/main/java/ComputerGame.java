@@ -1,8 +1,9 @@
 public class ComputerGame {
-    static int generalId = 0;
-    final int id;
-    int price;
-    ComputerGameSpec specs;
+    private static int generalId = 0;
+    private final int id;
+    private int price;
+    private ComputerGameSpec specs;
+
 
     public int getId() {
         return id;
