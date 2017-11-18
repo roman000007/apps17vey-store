@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
-public class ComputerStore {
+public class Cart {
     private ArrayList<ComputerGame> inventory;
 
-    public ComputerStore() {
+    public Cart() {
         inventory = new ArrayList<>();
     }
 
@@ -19,5 +19,18 @@ public class ComputerStore {
             }
         }
         return result;
+    }
+
+    public boolean ship(){
+        System.out.println("Shipping!");
+        return true;
+    }
+
+    public double computeTotalPrice() {
+        double total = 0;
+        for (ComputerGame game: inventory) {
+            total += game.getPrice();
+        }
+        return total;
     }
 }
