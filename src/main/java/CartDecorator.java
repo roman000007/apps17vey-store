@@ -1,17 +1,13 @@
 import java.util.ArrayList;
 
-public abstract class CartDecorator {
-    Cart cart;
-    public CartDecorator(Cart cart){
+public abstract class CartDecorator implements ICart {
+    ICart cart;
+    public CartDecorator(ICart cart){
         this.cart = cart;
     }
 
-    public ArrayList<ComputerGame> getInventory(){
-        return cart.getInventory();
-    }
-
-    public ArrayList<ComputerGame> search(ComputerGameSpec filter) {
-        return cart.search(filter);
+    public ArrayList<ComputerGame> getItems(){
+        return cart.getItems();
     }
 
     public boolean ship() {
@@ -19,6 +15,13 @@ public abstract class CartDecorator {
     }
 
     public double computeTotalPrice() {
-        return computeTotalPrice();
+        return cart.computeTotalPrice();
+    }
+
+    public DeliveryStrategy getDeliveryStrategy() {
+        return cart.getDeliveryStrategy();
+    }
+    public PaymentStrategy getPaymentStrategy() {
+        return cart.getPaymentStrategy();
     }
 }

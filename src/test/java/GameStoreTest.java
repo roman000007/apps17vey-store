@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import static junit.framework.Assert.assertTrue;
 import static junit.framework.TestCase.assertEquals;
 
-public class CartTest {
+public class GameStoreTest {
     @Test
     public void ComputerStoreTest() {
-        Cart store = new Cart();
+        GameStore store = new GameStore();
         ArrayList<ComputerGame> inventory = store.getInventory();
 
         inventory.add(new ComputerGame(100, new ComputerGameSpec("CS: Go",

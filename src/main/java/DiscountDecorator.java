@@ -1,6 +1,6 @@
 public class DiscountDecorator extends CartDecorator {
     final double DISCOUNT = 0.1;
-    public DiscountDecorator(Cart cart) {
+    public DiscountDecorator(ICart cart) {
         super(cart);
     }
 

@@ -1,24 +1,18 @@
 import java.util.ArrayList;
 
-public class Cart {
-    private ArrayList<ComputerGame> inventory;
+public class Cart implements ICart {
+    private ArrayList<ComputerGame> items;
+    private PaymentStrategy paymentStrategy;
+    private DeliveryStrategy deliveryStrategy;
 
-    public Cart() {
-        inventory = new ArrayList<>();
+    public Cart(PaymentStrategy paymentStrategy, DeliveryStrategy deliveryStrategy) {
+        this.paymentStrategy = paymentStrategy;
+        this.deliveryStrategy = deliveryStrategy;
+        items = new ArrayList<>();
     }
 
-    public ArrayList<ComputerGame> getInventory() {
-        return inventory;
-    }
-
-    public ArrayList<ComputerGame> search(ComputerGameSpec filter) {
-        ArrayList<ComputerGame> result = new ArrayList<>();
-        for (ComputerGame game: inventory) {
-            if (game.getSpecs().matches(filter)) {
-                result.add(game);
-            }
-        }
-        return result;
+    public ArrayList<ComputerGame> getItems() {
+        return items;
     }
 
     public boolean ship(){
@@ -28,9 +22,17 @@ public class Cart {
 
     public double computeTotalPrice() {
         double total = 0;
-        for (ComputerGame game: inventory) {
+        for (ComputerGame game: items) {
             total += game.getPrice();
         }
         return total;
+    }
+
+    public DeliveryStrategy getDeliveryStrategy() {
+        return deliveryStrategy;
+    }
+
+    public PaymentStrategy getPaymentStrategy() {
+        return paymentStrategy;
     }
 }

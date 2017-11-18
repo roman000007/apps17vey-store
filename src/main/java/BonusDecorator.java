@@ -1,5 +1,5 @@
 public class BonusDecorator extends CartDecorator {
-    public BonusDecorator(Cart cart) {
+    public BonusDecorator(ICart cart) {
         super(cart);
     }
 
