@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Cart implements ICart {
+public class Cart extends Observable implements ICart {
     private ArrayList<ComputerGame> items;
     private PaymentStrategy paymentStrategy;
     private DeliveryStrategy deliveryStrategy;
@@ -17,6 +17,7 @@ public class Cart implements ICart {
 
     public boolean ship(){
         System.out.println("Shipping!");
+        notifyObservers();
         return true;
     }
 
@@ -27,6 +28,8 @@ public class Cart implements ICart {
         }
         return total;
     }
+
+
 
     public DeliveryStrategy getDeliveryStrategy() {
         return deliveryStrategy;
